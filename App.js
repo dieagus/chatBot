@@ -1,14 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
+import React from 'react';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View, SafeAreaView} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import TextStorage from './TextStorage';
+
+const test = {
+  name: "Diego",
+  value: "hello"
+};
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView>
+      <TextStorage />
+    </SafeAreaView>
   );
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -18,3 +28,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App;
